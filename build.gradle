@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    version = '0.0.1'
+}
+
+ext {
+    junitJupiterVersion = '5.6.1'
+}
+
+dependencies {
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: project.junitJupiterVersion
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: project.junitJupiterVersion
+}
+
+test {
+    useJUnitPlatform()
+}
